@@ -1,4 +1,4 @@
-# A Custom Bootstrap5 Carousel made with vanilla Javascript
+# A Responsive Bootstrap5 Carousel made with vanilla Javascript
 
 
 ##### Screenshot:
