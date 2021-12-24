@@ -13,7 +13,6 @@ class Carousel {
             this.imageIndex++;
             return this.getCurrentSelection();
         }
-        console.log(this.imageIndex);
         return [];
     }
 
@@ -27,7 +26,7 @@ class Carousel {
 }
 
 function main() {
-    // Add 3-to-many links below:
+    // Add 3 or more links/images below:
     const links = [
         {
             anchorlink: 'https://www.links.cafe',
@@ -55,23 +54,24 @@ function main() {
             imageLink: 'https://www.google.com/logos/doodles/2020/stay-and-play-at-home-with-popular-past-google-doodles-coding-2017-6753651837108765-2xa.gif',
         },
     ];
-    const carousel = new Carousel(links);
 
-    document.getElementById('arrowLeftBtn').addEventListener('click', (ev) => {
-        ev.preventDefault();
-        for (const [index, linkPair] of carousel.rotateLeft().entries()) {
+    const updateUI = ((updatedLinks) => {
+        for (const [index, linkPair] of updatedLinks.entries()) {
             document.getElementById(`anchor-${index}`).href = linkPair.anchorlink;
             document.getElementById(`img-${index}`).src = linkPair.imageLink;
         }
     });
 
+    const carousel = new Carousel(links);
+
+    document.getElementById('arrowLeftBtn').addEventListener('click', (ev) => {
+        ev.preventDefault();
+        updateUI(carousel.rotateLeft());
+    });
+
     document.getElementById('arrowRightBtn').addEventListener('click', (ev) => {
         ev.preventDefault();
-        for (const [index, linkPair] of carousel.rotateRight().entries()) {
-            console.log(linkPair.anchorlink);
-            document.getElementById(`anchor-${index}`).href = linkPair.anchorlink;
-            document.getElementById(`img-${index}`).src = linkPair.imageLink;
-        }
+        updateUI(carousel.rotateRight());
     });
 }
 
