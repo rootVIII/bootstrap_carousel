@@ -1,4 +1,4 @@
-# A Responsive Bootstrap5 Carousel made with vanilla Javascript
+# A Responsive Bootstrap5 Carousel With Multiple Frames
 
 
 ##### Screenshot:
