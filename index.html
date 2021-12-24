@@ -5,15 +5,23 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="carousel.js" defer></script>
+    <script src="carousel.js"></script>
     <style>
         img {
-            width: 200px; /* You can set the dimensions to whatever you want */
+            width: 200px;
             height: 200px;
             object-fit: cover;
+        }
+        .my-bg-light {
+            background-color: #CDCBCB;
+        }
+        .btn:focus {
+            outline: none;
+            box-shadow: none;
+        }
+        a {
+            text-decoration: none !important;
         }
     </style>
 </head>
@@ -25,23 +33,30 @@
             <div class="col-3">
                 &emsp;
             </div>
-            <div class="col-6 bg-secondary rounded shadow-lg text-left">
-                <div class="text-left">
-                    <p class="fw-light text-light ms-3">Carousel</p>
+            <div class="col-6 my-bg-light rounded shadow-lg text-start">
+                <div class="text-left mb-2 border-bottom">
+                    <p class="fw-light text-muted ms-3">Custom Boostrap Carousel</p>
                 </div>
 
                 <div class="text-center">
                     <a href="https://www.links.cafe" target="_blank">
-                        <img class="bg-secondary rounded" src="https://www.links.cafe/static/og.jpg" alt="Img A">
+                        <img class="my-bg-light rounded" src="https://www.links.cafe/static/og.jpg" alt="Img A">
                     </a>
 
                     <a href="https://www.github.com" target="_blank">
-                        <img class="bg-secondary rounded" src="https://avatars.githubusercontent.com/u/30498791?v=4" alt="Img B">
+                        <img class="my-bg-light rounded" src="https://avatars.githubusercontent.com/u/30498791?v=4" alt="Img B">
                     </a>
 
                     <a href="https://www.google.com" target="_blank">
-                        <img class="bg-secondary rounded" src="https://www.google.com/logos/doodles/2021/winter-2021-northern-hemisphere-6753651837109164-2xa.gif" alt="Img C">
+                        <img class="my-bg-light rounded" src="https://www.google.com/logos/doodles/2021/winter-2021-northern-hemisphere-6753651837109164-2xa.gif" alt="Img C">
                     </a>
+                </div>
+
+                <div class="text-end border-top mb-2 mt-2">
+                    <div class="btn-group me-3">
+                        <button type="button" class="btn btn-sm">⬅</button>
+                        <button type="button" class="btn btn-sm">➡</button>
+                    </div>
                 </div>
 
             </div>
