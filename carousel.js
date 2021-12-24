@@ -5,18 +5,22 @@ class Carousel {
     }
 
     rotateRight() {
-        if (this.imageIndex++ < this.imageLinks.length - 1) {
+        if (this.imageIndex < this.imageLinks.length - 1) {
+            this.imageIndex++;
             console.log(this.imageIndex);
             return this.imageLinks.slice(this.imageIndex - 2, this.imageIndex + 1);
         }
+        console.log(this.imageIndex);
         return [];
     }
 
     rotateLeft() {
-        if (this.imageIndex-- > 2) {
+        if (this.imageIndex > 2) {
+            this.imageIndex--;
             console.log(this.imageIndex);
-            return this.imageLinks.slice(this.imageIndex - 2, this.imageIndex - 1);
+            return this.imageLinks.slice(this.imageIndex - 2, this.imageIndex + 1);
         }
+        console.log(this.imageIndex);
         return [];
     }
 }
