@@ -11,7 +11,6 @@ class Carousel {
     rotateRight() {
         if (this.imageIndex < this.imageLinks.length - 1) {
             this.imageIndex++;
-            console.log(this.imageIndex);
             return this.getCurrentSelection();
         }
         console.log(this.imageIndex);
@@ -21,15 +20,14 @@ class Carousel {
     rotateLeft() {
         if (this.imageIndex > 2) {
             this.imageIndex--;
-            console.log(this.imageIndex);
             return this.getCurrentSelection();
         }
-        console.log(this.imageIndex);
         return [];
     }
 }
 
 function main() {
+    // Add 3-to-many links below:
     const links = [
         {
             anchorlink: 'https://www.links.cafe',
@@ -54,19 +52,26 @@ function main() {
             imageLink: 'https://www.google.com/logos/doodles/2021/georges-seurats-162nd-birthday-6041111272357888-2xa.gif',
         }, {
             anchorlink: 'https://www.google.com',
-            imageLink: 'https://www.google.com/doodles/teachers-day-2021-november-24',
+            imageLink: 'https://www.google.com/logos/doodles/2020/stay-and-play-at-home-with-popular-past-google-doodles-coding-2017-6753651837108765-2xa.gif',
         },
     ];
     const carousel = new Carousel(links);
 
-    document.getElementById('arrowLeftBtn').addEventListener('click', () => {
-        let nextLeftGroup = carousel.rotateLeft();
-        console.log(nextLeftGroup);
+    document.getElementById('arrowLeftBtn').addEventListener('click', (ev) => {
+        ev.preventDefault();
+        for (const [index, linkPair] of carousel.rotateLeft().entries()) {
+            document.getElementById(`anchor-${index}`).href = linkPair.anchorlink;
+            document.getElementById(`img-${index}`).src = linkPair.imageLink;
+        }
     });
 
-    document.getElementById('arrowRightBtn').addEventListener('click', () => {
-        let nextRightGroup = carousel.rotateRight();
-        console.log(nextRightGroup);
+    document.getElementById('arrowRightBtn').addEventListener('click', (ev) => {
+        ev.preventDefault();
+        for (const [index, linkPair] of carousel.rotateRight().entries()) {
+            console.log(linkPair.anchorlink);
+            document.getElementById(`anchor-${index}`).href = linkPair.anchorlink;
+            document.getElementById(`img-${index}`).src = linkPair.imageLink;
+        }
     });
 }
 
