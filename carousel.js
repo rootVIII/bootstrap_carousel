@@ -1,7 +1,7 @@
 class Carousel {
     constructor(imageLinks) {
         this.imageLinks = imageLinks;
-        this.imageIndex = 2;
+        this.imageIndex = 1;
     }
 
     getCurrentSelection() {
@@ -63,6 +63,7 @@ function main() {
     });
 
     const carousel = new Carousel(links);
+    updateUI(carousel.rotateRight());
 
     document.getElementById('arrowLeftBtn').addEventListener('click', (ev) => {
         ev.preventDefault();
