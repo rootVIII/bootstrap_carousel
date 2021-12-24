@@ -4,11 +4,15 @@ class Carousel {
         this.imageIndex = 2;
     }
 
+    getCurrentSelection() {
+        return this.imageLinks.slice(this.imageIndex - 2, this.imageIndex + 1);
+    }
+
     rotateRight() {
         if (this.imageIndex < this.imageLinks.length - 1) {
             this.imageIndex++;
             console.log(this.imageIndex);
-            return this.imageLinks.slice(this.imageIndex - 2, this.imageIndex + 1);
+            return this.getCurrentSelection();
         }
         console.log(this.imageIndex);
         return [];
@@ -18,7 +22,7 @@ class Carousel {
         if (this.imageIndex > 2) {
             this.imageIndex--;
             console.log(this.imageIndex);
-            return this.imageLinks.slice(this.imageIndex - 2, this.imageIndex + 1);
+            return this.getCurrentSelection();
         }
         console.log(this.imageIndex);
         return [];
