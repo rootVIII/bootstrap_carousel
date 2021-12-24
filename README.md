@@ -1,7 +1,7 @@
 # A Custom Bootstrap5 Carousel made with vanilla Javascript
 
 
-##### IMAGE:
+##### Screenshot:
 <img src="https://user-images.githubusercontent.com/30498791/147303176-965ec7cd-b47b-421e-b319-daeea6b7355e.png" alt="image host2"/>
 
 
