@@ -29,8 +29,8 @@ function main() {
     // Add 3 or more links/images below:
     const links = [
         {
-            anchorlink: 'https://www.links.cafe',
-            imageLink: 'https://www.links.cafe/static/og.jpg',
+            anchorlink: 'https://github.com/rootVIII/bootstrap_carousel',
+            imageLink: 'https://www.google.com/logos/doodles/2020/st-patricks-day-2020-6753651837108319-2x.png',
         }, {
             anchorlink: 'https://www.github.com/rootVIII',
             imageLink: 'https://avatars.githubusercontent.com/u/30498791?v=4',
